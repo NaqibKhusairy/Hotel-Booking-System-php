@@ -1,0 +1,123 @@
+<!--Group Azfar,Naqib,Firdaus Hasim , Mawi-->
+<!--HTML Code-->
+<html>
+    <head>
+        <title>INAP DESA RESERVATION FORM</title>                                                               <!-- Web Title -->
+        <link rel="icon" type="image/icon" href="../Image/icon.png">                                            <!-- Icon For Web Page-->
+        <link rel="stylesheet" type="text/css" href="../CSS/hotelStyle.css">                                    <!-- Link to CSS-->
+        <script src="../JS/selectforloop.js" defer></script>                                                    <!-- Link to Js to use for loop to insert into select..-->
+        <script>
+            function validate() {
+                const cin = document.getElementsByName("cin")[0].value;
+                const cout = document.getElementsByName("cout")[0].value;
+                
+                if (validateDates(cin, cout)) {
+                    // Dates are valid, do something here
+                    alert("Check-in and check-out dates cannot be the same.");
+                    return false;
+                } else {
+                    // Dates are invalid, show error message or do something else
+                    return true;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <table id="tabphp">                                                                                     <!-- Table -->
+            <form action="../PHP/book.php" method="post" onsubmit="return validate()">                                                       <!-- Form on submit to book.php with method post -->
+                <tr>                                                                                            <!-- ROW 1 -->
+                    <td colspan="4">                                                                            <!-- COL 1-4 -->
+                        <h2 id="HeaderTitle">INAP DESA RESERVATION FORM </h2>                                   <!-- content in ROW 1 COL 1-4 -->
+                    </td>
+                </tr>
+                <tr>                                                                                            <!-- ROW 2 -->
+                    <td><req>*</req>Check-in Date </td>                                                         <!-- COL 1 -->
+                    <td> : </td>                                                                                <!-- COL 2 -->
+                    <td>                                                                                        <!-- COL 3 -->
+                        <input type="date" name="cin" min="2022-12-01" max="2050-12-31" required>               <!-- content in ROW 2 Col 3-->
+                    </td>
+                </tr>
+                <tr>                                                                                            <!-- ROW 3 -->
+                    <td>                                                                                        <!-- COL 1 -->
+                        <req>*</req>Check-out Date                                                              <!-- content in ROW 3 Col 1 -->
+                    </td>
+                    <td> : </td>                                                                                <!-- COL 2 -->
+                    <td>                                                                                        <!--  COL 3 -->
+                        <input type="date" name="cout" min="2022-12-01" max="2050-12-31" required>              <!-- content in ROW 3 COL 3 -->
+                    </td>
+                </tr>
+                <tr>                                                                                            <!-- ROW 4 -->
+                    <td><req>*</req>No. of Rooms</td>                                                           <!-- COL 1 -->
+                    <td> : </td>                                                                                <!-- COL 2 -->
+                    <td>                                                                                        <!-- COL 3 -->
+                        <select id="noroom" name="noroom" required>                                             <!-- Select Option name noroom -->
+                            <option value=""> -- Select -- </option>                                            <!-- Option for select name noroom (for loop in js) -->
+                        </select>
+                    </td>
+                </tr>
+                <tr>                                                                                            <!-- ROW 5 -->
+                    <td><req>*</req>Room Type</td>                                                              <!-- COL 1 -->
+                    <td> : </td>                                                                                <!-- COL 2 -->
+                    <td>                                                                                        <!-- COL 3 -->
+                        <select id="roomtype" name="roomtype" required>                                         <!-- Select Option name roomtype -->
+                            <option value=""> -- Select -- </option>                                            <!-- Option 1 for select name roomtype -->
+                            <option value="ss">Standart Single</option>                                        <!-- Option 2 for select name roomtype -->
+                            <option value="dt">Double Twin</option>                                            <!-- Option 3 for select name roomtype -->
+                            <option value="td">Triple Deluxe</option>                                          <!-- Option 4 for select name roomtype -->
+                            <option value="fs">Family Suite</option>                                           <!-- Option 5 for select name roomtype -->
+                        </select>
+                    </td>
+                    <td>                                                                                        <!-- COL 4 -->
+                        <a class="rate" id="rate" onclick="window.open('../PHP/rate.php','blank');">            <!-- lINK IN COL 4 -->
+                            RATES                                                                               <!-- Content for link in COL 4 -->
+                        </a>
+                    </td>
+                </tr>
+                <tr>                                                                                            <!-- ROW 6 -->
+                    <td><req>*</req>Full Name</td>                                                              <!-- COL 1 -->
+                    <td> : </td>                                                                                <!-- COL 2 -->
+                    <td>                                                                                        <!-- COL 3 -->
+                        <input type="text" name="name" pattern="[A-Za-z ]+" required>                           <!-- content in COL 3 and pattern to name validate-->
+                    </td>
+                </tr>
+                <tr>                                                                                            <!-- ROW 7 -->
+                    <td><req>*</req>Email</td>                                                                  <!-- COL 1 -->
+                    <td> : </td>                                                                                <!-- COL 2 -->
+                    <td colspan="2">                                                                            <!-- COL 3-4-->
+                        <input type="email" name="mail" required>                                               <!-- content in COL 3-4 and pattern to email validate-->
+                    </td>
+                </tr>
+                <tr>                                                                                            <!-- ROW 8 -->
+                    <td><req>*</req>Telephone</td>                                                              <!-- COL 1 -->
+                    <td> : </td>                                                                                <!-- COL 2 -->
+                    <td>                                                                                        <!-- COL 3 -->
+                        <input type="text" name="num" pattern="[0-9]{3}-[0-9]{7,8}" required>                   <!-- content in COL 3 and pattern to phone validate-->
+                    </td>
+                    <td>                                                                                        <!-- COL 4-->
+                        <b>EXAMPLE : 012-3456789</b>                                                            <!-- content in COL 4 -->
+                    </td>
+                </tr>
+                <tr>                                                                                            <!-- ROW 9 -->
+                    <td><req>*</req>Address</td>                                                                <!-- COL 1 -->
+                    <td> : </td>                                                                                <!-- COL 2 -->
+                    <td colspan="2">                                                                            <!-- COL 3-4 -->
+                        <textarea name="add" required></textarea>                                               <!-- content in COL 3-4 and pattern to address validate-->
+                    </td>
+                </tr>
+                <tr>                                                                                            <!-- ROW 10 -->
+                    <td>Special Requirements, if any </td>                                                      <!-- COL 1 -->
+                    <td> : </td>                                                                                <!-- COL 2 -->
+                    <td colspan="2">                                                                            <!-- COL 3-4 -->
+                        <textarea name="specialreq"></textarea>                                                 <!-- content in COL 3-4 -->
+                    </td>
+                </tr>
+                <tr>                                                                                            <!-- ROW 11 -->
+                    <td colspan="4" align="center">                                                             <!-- ROW 1-4 -->
+                        <input type="submit" value="SUBMIT" id="btn">                                           <!-- input type submit -->
+                        <input type="reset" value="CLEAR" id="btn">                                             <!-- input type reset -->
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </body>
+</html> 

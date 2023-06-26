@@ -1,0 +1,46 @@
+body															/*body style*/
+{
+    background-image:url("../Image/background2.jpg");		 	/*background image used from url "../Image/background2.jpg"*/
+	background-repeat: no-repeat;							 	/*image in the background no repeat*/
+	background-attachment: fixed;							 	/*the image in the background fixed on the interface*/
+	background-size: 100% 100%;								 	/*size of the image on the background is 100% * 100%*/
+}
+req																/*req style*/
+{
+    color:red;												   /*set text color = red*/
+}
+table															/*table style*/
+{
+    margin:auto;												/*set margin = auto (make align center)*/
+}
+#HeaderTitle													/*HeaderTitle id style*/
+{
+    text-align: center;											/*align text on center*/
+}
+#rate															/*rate id style*/
+{
+    float: right;												/*float the content on right*/
+}
+a,input[type=submit],input[type=reset]							/*a , input[type=submit] and input[type=reset] style*/
+{
+	display: inline-block;										/*make it display inline-block*/
+	background-color:lightgray;							   /*set background-color = rgb(211,211,211)*/
+	color: black; 								   			   /*set background-color = rgb(0,0,0)*/
+	margin: 2px; 												/*set the margin = 2px*/
+	padding: 3px;												/*set the padding = 3px*/
+	border-radius: 5px; 										/*set the border-radius = 5px to make a little curve*/
+	cursor: pointer;											/*set the cursor to pointer (mouse enter icon)*/
+	text-decoration: none;										/*make the decoration on text is none*/
+	border: none;												/*make none border*/
+}
+#tabphp															/*tabphp id style*/
+{
+	background-color: rgba(240,255,255,0.3); 				   /*set background-color = rgba(240,255,255,0.3)*/
+	border: 1px solid black;								   /*set the border = 1px solid black*/
+}
+a:hover,input[type=submit]:hover,input[type=reset]:hover		/*a:hover , input[type=submit]:hover and input[type=reset]:hover style*/
+{
+	display: inline-block;										/*make it display inline-block*/
+	background-color:rgba(10, 10, 10, 0.3); 				   /*set background-color = rgba(10,10,10,0.3)*/
+	color: rgb(240,255,255); 								   /*set background-color = rgb(240,255,255)*/
+}

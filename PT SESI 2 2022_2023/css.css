@@ -1,0 +1,30 @@
+#cus
+{
+	width:50%;
+	border:2px solid;
+	padding:2px;
+	border-width : 5px;
+	border-color:#CC0000;
+	border-bottom-color:#800000;
+	border-right-color:#800000;
+}
+red, .red
+{
+	color:red;
+}
+textarea
+{
+	width:400;
+}
+blue
+{
+	color:blue;
+}
+.green
+{
+	color:green;
+}
+#output
+{
+	width:400;
+}
